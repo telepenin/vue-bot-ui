@@ -7,12 +7,12 @@
     :bot-typing="waitResponse"
     :input-disable="waitResponse"
     @msg-send="messageSendHandler"
+    @msg-to-server="messageToServer"
   )
 </template>
 <script>
 import BotIcon from './assets/icons/bot.png'
 import { VueBotUI } from './vue-bot-ui'
-import EventBus from './helpers/event-bus'
 
 export default {
   components: {
@@ -82,7 +82,6 @@ export default {
       console.log('Successfully connected to the echo websocket server...')
       this.isConnected = true
     }
-    EventBus.$on('send-message-to-server', this.messageToServer)
   }
 }
 

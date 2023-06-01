@@ -152,6 +152,7 @@ export default {
 
   beforeDestroy () {
     EventBus.$off('select-button-option')
+    EventBus.$off('send-message-to-server')
   },
 
   methods: {
@@ -172,9 +173,12 @@ export default {
 
       if (this.botActive) {
         EventBus.$on('select-button-option', this.selectOption)
+        EventBus.$on('send-message-to-server', this.messageToServer)
+
         this.$emit('init')
       } else {
         EventBus.$off('select-button-option')
+        EventBus.$off('send-message-to-server')
         this.$emit('destroy')
       }
     },
@@ -185,6 +189,10 @@ export default {
 
     selectOption (value) {
       this.$emit('msg-send', value)
+    },
+
+    messageToServer (value) {
+      this.$emit('msg-to-server', value)
     }
   }
 }
