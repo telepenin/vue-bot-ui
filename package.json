@@ -3,8 +3,8 @@
   "version": "0.0.7",
   "description": "Chatbot UI using Vue.js 2",
   "author": {
-    "name": "SonNH",
-    "email": "sonnh@ownego.com"
+    "name": "Nikolay Telepenin",
+    "email": "telepenin.nikolay@gmail.com"
   },
   "main": "dist/vue-bot-ui.common.js",
   "files": [
@@ -52,16 +52,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JuzSer/vue-bot-ui.git"
+    "url": "https://github.com/telepenin/vue-bot-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/JuzSer/vue-bot-ui/issues"
+    "url": "https://github.com/telepenin/vue-bot-ui/issues"
   },
-  "homepage": "https://github.com/JuzSer/vue-bot-ui#readme",
+  "homepage": "https://github.com/telepenin/vue-bot-ui#readme",
   "license": "MIT",
   "dependencies": {
-    "marked": "^5.0.4",
-    "uuid": "^9.0.0",
     "vue-star-rating": "^1.7.0"
   }
 }
