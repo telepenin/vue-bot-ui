@@ -1,23 +1,18 @@
 <template lang="pug">
 #app
-  img(
-    alt="Vue Bot UI",
-    src="./assets/logo.png"
-  )
   VueBotUI(
-    :options="botOptions",
-    :messages="messageData",
-    :bot-typing="botTyping",
-    :input-disable="inputDisable",
-    :is-open="false",
-    @init="botStart",
-    @msg-send="msgSend",
+    v-if="isConnected"
+    :messages="messages"
+    :options="botOptions"
+    :bot-typing="waitResponse"
+    :input-disable="waitResponse"
+    @msg-send="messageSendHandler"
   )
 </template>
 <script>
 import BotIcon from './assets/icons/bot.png'
 import { VueBotUI } from './vue-bot-ui'
-import { messageService } from './helpers/message'
+import EventBus from './helpers/event-bus'
 
 export default {
   components: {
@@ -27,73 +22,70 @@ export default {
 
   data () {
     return {
+      messages: [],
       messageData: [],
-      botTyping: false,
-      inputDisable: false,
+      isConnected: false,
+      waitResponse: false,
       botOptions: {
         botAvatarImg: BotIcon,
+        botTitle: 'Chat',
+        colorScheme: '#43a069',
         boardContentBg: '#f4f4f4',
         msgBubbleBgBot: '#fff',
-        inputPlaceholder: 'Type hereeee...',
-        inputDisableBg: '#fff',
-        inputDisablePlaceholder: 'Hit the buttons above to respond'
+        msgBubbleBgUser: '#43a069'
       }
     }
   },
 
   methods: {
-    botStart () {
-      // Get token if you want to build a private bot
-      // Request first message here
-
-      // Fake typing for the first message
-      this.botTyping = true
-      setTimeout(() => {
-        this.botTyping = false
-        this.messageData.push({
-          agent: 'bot',
-          type: 'text',
-          text: 'Hello'
-        })
-      }, 1000)
-    },
-
-    msgSend (value) {
-      // Push the user's message to board
-      this.messageData.push({
+    messageSendHandler (message) {
+      this.messages.push({
         agent: 'user',
         type: 'text',
-        text: value.text
+        text: message.text
       })
 
-      this.getResponse()
+      this.connection.send(JSON.stringify({
+        'type': 'question',
+        'text': message.text
+      }))
+      this.waitResponse = true
     },
-
-    // Submit the message from user to bot API, then get the response from Bot
-    getResponse () {
-      // Loading
-      this.botTyping = true
-
-      // Post the message from user here
-      // Then get the response as below
-
-      // Create new message from fake data
-      messageService.createMessage()
-        .then((response) => {
-          const replyMessage = {
-            agent: 'bot',
-            ...response
-          }
-
-          this.inputDisable = response.disableInput
-          this.messageData.push(replyMessage)
-
-          // finish
-          this.botTyping = false
-        })
+    messageToServer (message) {
+      this.connection.send(JSON.stringify(message))
     }
+  },
+  created () {
+    console.log('Starting connection to WebSocket Server')
+    this.connection = new WebSocket('ws://localhost:8765')
+
+    this.connection.onmessage = (response) => {
+      const event = JSON.parse(response.data)
+      console.log(event)
+      this.messages.push({
+        agent: 'bot',
+        type: 'markdown',
+        text: event.text
+      })
+      this.waitResponse = false
+
+      setTimeout(() => {
+        this.messages.push({
+          agent: 'bot',
+          type: 'rate',
+          id: event.id
+        })
+      }, 1000)
+    }
+
+    this.connection.onopen = (event) => {
+      console.log('Successfully connected to the echo websocket server...')
+      this.isConnected = true
+    }
+    EventBus.$on('send-message-to-server', this.messageToServer)
   }
 }
+
 </script>
 <style lang="scss">
 #app {

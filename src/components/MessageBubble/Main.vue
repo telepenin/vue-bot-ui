@@ -13,11 +13,15 @@
 <script>
 import SingleText from './SingleText'
 import ButtonOptions from './ButtonOptions'
+import MarkdownText from './MarkdownText'
+import Rate from './Rate.vue'
 
 export default {
   components: {
     SingleText,
-    ButtonOptions
+    ButtonOptions,
+    MarkdownText,
+    Rate
   },
 
   props: {
@@ -40,6 +44,12 @@ export default {
       switch (this.message.type) {
         case 'button':
           type = 'ButtonOptions'
+          break
+        case 'markdown':
+          type = 'MarkdownText'
+          break
+        case 'rate':
+          type = 'Rate'
           break
         default:
           type = 'SingleText'
