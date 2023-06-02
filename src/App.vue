@@ -78,8 +78,13 @@ export default {
       }, 1000)
     }
 
+    this.connection.onclose = (event) => {
+      console.log('Connection closed')
+      this.isConnected = false
+    }
+
     this.connection.onopen = (event) => {
-      console.log('Successfully connected to the echo websocket server...')
+      console.log('Successfully connected to the echo websocket server')
       this.isConnected = true
     }
   }

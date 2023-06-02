@@ -2,9 +2,7 @@
 <div class="qkb-msg-bubble-component.qkb-msg-bubble-component--single-text">
   <div class="qkb-msg-bubble-component__text">
     {{ text }}
-    <star-rating :star-size="40" :increment="0.5" :show-rating="false" @rating-selected="setRating"
-      :read-only="readOnly"
-    ></star-rating>
+    <star-rating :star-size="40" :increment="0.5" :show-rating="false" @rating-selected="setRating"></star-rating>
     {{ textAfterSelecting }}
   </div>
 </div>
@@ -24,14 +22,12 @@ export default {
   },
   data () {
     return {
-      readOnly: false,
       textAfterSelecting: '',
       text: 'Please rate the quality of the answer'
     }
   },
   methods: {
     setRating (rating) {
-      this.readOnly = true
       this.textAfterSelecting = 'Thank you for provided feedback'
 
       EventBus.$emit('send-message-to-server', {

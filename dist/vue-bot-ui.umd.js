@@ -2000,12 +2000,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"15527b0d-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BotUI.vue?vue&type=template&id=104b0732&lang=pug&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"15527b0d-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BotUI.vue?vue&type=template&id=4642aadc&lang=pug&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-bot-ui",class:_vm.uiClasses},[_c('transition',{attrs:{"name":"qkb-fadeUp"}},[(_vm.botActive)?_c('div',{staticClass:"qkb-board"},[_c('BoardHeader',{attrs:{"bot-title":_vm.optionsMain.botTitle},on:{"close-bot":_vm.botToggle}}),_c('BoardContent',{attrs:{"bot-typing":_vm.botTyping,"main-data":_vm.messages}}),_c('BoardAction',{attrs:{"input-disable":_vm.inputDisable,"input-placeholder":_vm.optionsMain.inputPlaceholder,"input-disable-placeholder":_vm.optionsMain.inputDisablePlaceholder},on:{"msg-send":_vm.sendMessage}})],1):_vm._e()]),_c('div',{staticClass:"qkb-bot-bubble"},[_c('button',{staticClass:"qkb-bubble-btn",on:{"click":_vm.botToggle}},[_vm._t("bubbleButton",[_c('transition',{attrs:{"name":"qkb-scaleUp"}},[(!_vm.botActive)?_c('BubbleIcon',{key:"1",staticClass:"qkb-bubble-btn-icon"}):_c('CloseIcon',{key:"2",staticClass:"qkb-bubble-btn-icon qkb-bubble-btn-icon--close"})],1)])],2)]),_c('AppStyle',{attrs:{"options":_vm.optionsMain}}),_c('div',{staticClass:"qkb-preload-image"},[(_vm.optionsMain.botAvatarImg)?_c('div',{staticClass:"qkb-msg-avatar__img"}):_vm._e()])],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/BotUI.vue?vue&type=template&id=104b0732&lang=pug&
+// CONCATENATED MODULE: ./src/components/BotUI.vue?vue&type=template&id=4642aadc&lang=pug&
 
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
@@ -2327,20 +2327,18 @@ var MarkdownText_component = normalizeComponent(
 )
 
 /* harmony default export */ var MarkdownText = (MarkdownText_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"15527b0d-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/Rate.vue?vue&type=template&id=2a4cce69&lang=html&
-var Ratevue_type_template_id_2a4cce69_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble-component.qkb-msg-bubble-component--single-text"},[_c('div',{staticClass:"qkb-msg-bubble-component__text"},[_vm._v(" "+_vm._s(_vm.text)+" "),_c('star-rating',{attrs:{"star-size":40,"increment":0.5,"show-rating":false,"read-only":_vm.readOnly},on:{"rating-selected":_vm.setRating}}),_vm._v(" "+_vm._s(_vm.textAfterSelecting)+" ")],1)])}
-var Ratevue_type_template_id_2a4cce69_lang_html_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"15527b0d-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/Rate.vue?vue&type=template&id=a7b3418a&lang=html&
+var Ratevue_type_template_id_a7b3418a_lang_html_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"qkb-msg-bubble-component.qkb-msg-bubble-component--single-text"},[_c('div',{staticClass:"qkb-msg-bubble-component__text"},[_vm._v(" "+_vm._s(_vm.text)+" "),_c('star-rating',{attrs:{"star-size":40,"increment":0.5,"show-rating":false},on:{"rating-selected":_vm.setRating}}),_vm._v(" "+_vm._s(_vm.textAfterSelecting)+" ")],1)])}
+var Ratevue_type_template_id_a7b3418a_lang_html_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/MessageBubble/Rate.vue?vue&type=template&id=2a4cce69&lang=html&
+// CONCATENATED MODULE: ./src/components/MessageBubble/Rate.vue?vue&type=template&id=a7b3418a&lang=html&
 
 // EXTERNAL MODULE: ./node_modules/vue-star-rating/dist/VueStarRating.common.js
 var VueStarRating_common = __webpack_require__("5b3d");
 var VueStarRating_common_default = /*#__PURE__*/__webpack_require__.n(VueStarRating_common);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MessageBubble/Rate.vue?vue&type=script&lang=js&
-//
-//
 //
 //
 //
@@ -2363,14 +2361,12 @@ var VueStarRating_common_default = /*#__PURE__*/__webpack_require__.n(VueStarRat
   },
   data: function data() {
     return {
-      readOnly: false,
       textAfterSelecting: '',
       text: 'Please rate the quality of the answer'
     };
   },
   methods: {
     setRating: function setRating(rating) {
-      this.readOnly = true;
       this.textAfterSelecting = 'Thank you for provided feedback';
       event_bus.$emit('send-message-to-server', {
         'type': 'rate',
@@ -2392,8 +2388,8 @@ var VueStarRating_common_default = /*#__PURE__*/__webpack_require__.n(VueStarRat
 
 var Rate_component = normalizeComponent(
   MessageBubble_Ratevue_type_script_lang_js_,
-  Ratevue_type_template_id_2a4cce69_lang_html_render,
-  Ratevue_type_template_id_2a4cce69_lang_html_staticRenderFns,
+  Ratevue_type_template_id_a7b3418a_lang_html_render,
+  Ratevue_type_template_id_a7b3418a_lang_html_staticRenderFns,
   false,
   null,
   null,
@@ -3024,6 +3020,7 @@ function BotUIvue_type_script_lang_js_defineProperty(obj, key, value) { if (key 
   },
   beforeDestroy: function beforeDestroy() {
     event_bus.$off('select-button-option');
+    event_bus.$off('send-message-to-server');
   },
   methods: {
     botOpen: function botOpen() {
@@ -3041,9 +3038,11 @@ function BotUIvue_type_script_lang_js_defineProperty(obj, key, value) { if (key 
 
       if (this.botActive) {
         event_bus.$on('select-button-option', this.selectOption);
+        event_bus.$on('send-message-to-server', this.messageToServer);
         this.$emit('init');
       } else {
         event_bus.$off('select-button-option');
+        event_bus.$off('send-message-to-server');
         this.$emit('destroy');
       }
     },
@@ -3052,6 +3051,9 @@ function BotUIvue_type_script_lang_js_defineProperty(obj, key, value) { if (key 
     },
     selectOption: function selectOption(value) {
       this.$emit('msg-send', value);
+    },
+    messageToServer: function messageToServer(value) {
+      this.$emit('msg-to-server', value);
     }
   }
 });
