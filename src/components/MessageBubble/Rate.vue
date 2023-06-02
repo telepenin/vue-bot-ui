@@ -1,5 +1,5 @@
 <template lang="html">
-<div class="qkb-msg-bubble-component.qkb-msg-bubble-component--single-text">
+<div class="qkb-msg-bubble-component qkb-msg-bubble-component--single-text">
   <div class="qkb-msg-bubble-component__text">
     {{ text }}
     <star-rating :star-size="40" :increment="0.5" :show-rating="false" @rating-selected="setRating"></star-rating>
