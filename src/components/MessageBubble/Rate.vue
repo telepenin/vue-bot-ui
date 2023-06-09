@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     setRating (rating) {
-      this.textAfterSelecting = 'Thank you for provided feedback'
+      this.textAfterSelecting = 'Please rate the quality of the answer; my answers will improve thanks to that'
 
       EventBus.$emit('send-message-to-server', {
         'type': 'rate',
