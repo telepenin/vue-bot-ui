@@ -57,3 +57,15 @@ $typing-duration: .35s;
     animation-delay: $typing-duration;
   }
 }
+
+.qkb-msg-bubble-component__container-text {
+  display: flex;
+}
+
+.qkb-msg-bubble__typing-indicator-container {
+  padding-top: 5px;
+}
+
+.qkb-msg-bubble-component__thinking-text {
+  padding-right: 10px;
+}
