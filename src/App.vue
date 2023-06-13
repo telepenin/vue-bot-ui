@@ -84,6 +84,7 @@ export default {
     }
 
     this.connection.onopen = (event) => {
+      console.log(event)
       console.log('Successfully connected to the echo websocket server')
       this.isConnected = true
     }

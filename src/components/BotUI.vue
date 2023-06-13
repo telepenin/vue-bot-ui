@@ -139,13 +139,13 @@ export default {
   },
 
   mounted () {
-    document.addEventListener(Config.EVENT_OPEN, function () {
+    document.addEventListener(Config.EVENT_OPEN, () => {
       this.botOpen()
     })
-    document.addEventListener(Config.EVENT_CLOSE, function () {
+    document.addEventListener(Config.EVENT_CLOSE, () => {
       this.botClose()
     })
-    document.addEventListener(Config.EVENT_TOGGLE, function () {
+    document.addEventListener(Config.EVENT_TOGGLE, () => {
       this.botToggle()
     })
   },
