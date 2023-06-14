@@ -1,8 +1,8 @@
-import Vue from 'vue'
+import mitt from 'mitt';
+
+import { createApp } from 'vue'
 import App from './App.vue'
 
-Vue.config.productionTip = false
-
-new Vue({
-  render: (h) => h(App)
-}).$mount('#app')
+const app = createApp(App)
+app.config.globalProperties.$eventBus = mitt();
+app.mount('#app')

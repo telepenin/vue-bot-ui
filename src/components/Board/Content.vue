@@ -36,10 +36,13 @@ export default {
   },
 
   watch: {
-    mainData: function (newVal) {
-      this.$nextTick(() => {
-        this.updateScroll()
-      })
+    mainData: {
+      handler(newVal) {
+        this.$nextTick(() => {
+          this.updateScroll()
+        })
+      },
+      deep: true
     }
   },
 

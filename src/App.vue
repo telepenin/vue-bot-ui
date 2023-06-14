@@ -22,6 +22,7 @@ export default {
 
   data () {
     return {
+      docName: 'imunifyav-doc',
       messages: [],
       messageData: [],
       isConnected: false,
@@ -47,12 +48,13 @@ export default {
 
       this.connection.send(JSON.stringify({
         'type': 'question',
-        'text': message.text
+        'text': message.text,
+        'doc-name': this.docName
       }))
       this.waitResponse = true
     },
     messageToServer (message) {
-      this.connection.send(JSON.stringify(message))
+      this.connection.send(JSON.stringify({...{'doc-name': this.docName}, ...message}))
     }
   },
   created () {
@@ -61,7 +63,6 @@ export default {
 
     this.connection.onmessage = (response) => {
       const event = JSON.parse(response.data)
-      console.log(event)
       this.messages.push({
         agent: 'bot',
         type: 'markdown',
@@ -84,7 +85,6 @@ export default {
     }
 
     this.connection.onopen = (event) => {
-      console.log(event)
       console.log('Successfully connected to the echo websocket server')
       this.isConnected = true
     }

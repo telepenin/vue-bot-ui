@@ -37,7 +37,6 @@
     .qkb-msg-avatar__img(v-if="optionsMain.botAvatarImg")
 </template>
 <script>
-import EventBus from '../helpers/event-bus'
 import Config from '../config'
 import BoardHeader from './Board/Header'
 import BoardContent from './Board/Content'
@@ -150,9 +149,9 @@ export default {
     })
   },
 
-  beforeDestroy () {
-    EventBus.$off('select-button-option')
-    EventBus.$off('send-message-to-server')
+  beforeUnmount () {
+    this.$eventBus.off('select-button-option')
+    this.$eventBus.off('send-message-to-server')
   },
 
   methods: {
@@ -172,13 +171,13 @@ export default {
       this.botActive = !this.botActive
 
       if (this.botActive) {
-        EventBus.$on('select-button-option', this.selectOption)
-        EventBus.$on('send-message-to-server', this.messageToServer)
+        this.$eventBus.on('select-button-option', this.selectOption)
+        this.$eventBus.on('send-message-to-server', this.messageToServer)
 
         this.$emit('init')
       } else {
-        EventBus.$off('select-button-option')
-        EventBus.$off('send-message-to-server')
+        this.$eventBus.off('select-button-option')
+        this.$eventBus.off('send-message-to-server')
         this.$emit('destroy')
       }
     },
