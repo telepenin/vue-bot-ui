@@ -33,6 +33,7 @@
     "@vue/test-utils": "^2.3.2",
     "bootstrap": "^4.3.1",
     "core-js": "^3.3.2",
+    "mitt": "^3.0.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "sass": "^1.19.0",
@@ -41,7 +42,7 @@
     "svg-vue3-loader": "^1.0.2",
     "vue": "^3.3.4",
     "vue-loader": "^17.2.2",
-    "mitt": "^3.0.0"
+    "vue-multiselect": "^3.0.0-beta.2"
   },
   "repository": {
     "type": "git",
