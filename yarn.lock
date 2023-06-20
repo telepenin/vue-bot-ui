@@ -8458,6 +8458,11 @@ vue-loader@^17.0.0, vue-loader@^17.2.2:
     hash-sum "^2.0.0"
     watchpack "^2.4.0"
 
+vue-multiselect@^3.0.0-beta.2:
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/vue-multiselect/-/vue-multiselect-3.0.0-beta.2.tgz#dcfc1f8bc5bff78d85d516bfd71339fce49be97a"
+  integrity sha512-TFVHtI/KdWoD3Opzbkso8OIqkZlZEqFF7f2jlYx1ttgC4Jv/48IGlU5zn6cBR4p2bFDFGCHF5SkLCaadLhnBPQ==
+
 vue-star-rating@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/vue-star-rating/-/vue-star-rating-2.1.0.tgz#303df0231b5d04d271977c44a0967d4768b44e75"
